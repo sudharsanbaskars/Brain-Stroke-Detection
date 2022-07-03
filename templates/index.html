@@ -1,0 +1,183 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+    html body {
+      background-color: rgb(206, 206, 228);
+  }
+</style>
+
+<!--Form Section-->
+<br>
+<div
+  style="
+    width: 350px;
+    height: 70rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{url_for('predict')}}">
+
+    <div class="form-group">
+      <label for="Gender" style="font-size: 17px"><b>Gender</b></label>
+      <select name="gender"
+        class="form-control"
+        id="Gender"
+        style="font-weight: bold"
+        required>
+        <option selected>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="age" style="font-size: 17px"><b>Age</b></label>
+      <input
+        type="number"
+        step="1"
+        class="form-control"
+        id="age"
+        name="age"
+        placeholder="Enter the Age"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="having_hypertension" style="font-size: 17px"><b>Having Hypertension?</b></label>
+      <select name="having_hypertension"
+        class="form-control"
+        id="having_hypertension"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="having_heart_disease" style="font-size: 17px"><b>Having Heart Disease?</b></label>
+      <select name="having_heart_disease"
+        class="form-control"
+        id="having_heart_disease"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="married" style="font-size: 17px"><b>Married ?</b></label>
+      <select name="married"
+        class="form-control"
+        id="married"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+      <div class="form-group">
+      <label for="residence_type" style="font-size: 17px"><b>Residence Type</b></label>
+      <select name="residence_type"
+        class="form-control"
+        id="residence_type"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Urban</option>
+        <option>Rural</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="avg_glucose_level" style="font-size: 17px"><b>Enter the Average Glucose level</b></label>
+      <input
+        type="number"
+        step="0.02"
+        class="form-control"
+        id="avg_glucose_level"
+        name="avg_glucose_level"
+        placeholder="Enter the number"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+      <div class="form-group">
+      <label for="bmi" style="font-size: 17px"><b>Enter the BMI</b></label>
+      <input
+        type="number"
+        step="0.05"
+        class="form-control"
+        id="bmi"
+        name="bmi"
+        placeholder="Enter the number"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+<div class="form-group">
+      <label for="work_type" style="font-size: 17px"><b>Job Type</b></label>
+      <select name="work_type"
+        class="form-control"
+        id="work_type"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Government Job</option>
+        <option>Never Worked</option>
+          <option>Private Job</option>
+          <option>Self Employed</option>
+          <option>Children</option>
+      </select>
+    </div>
+
+
+<div class="form-group">
+      <label for="smoking_status" style="font-size: 17px"><b>Smoking Status</b></label>
+      <select name="smoking_status"
+        class="form-control"
+        id="smoking_status"
+        style="font-weight: bold"
+        required>
+        <option selected>Select the Option</option>
+        <option>Unknown</option>
+        <option>Formerly Smoked</option>
+          <option>Never Smoked</option>
+          <option>Smokes</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+<br>
+   <div style="background-color: white;">
+      <span><h4 style="color:black; font-size: 600;"><b>{{result}}</b></h4></span>
+    </div>
+
+</div>
+
+
+
+<!-- Form section -->
+
+{% endblock %}
